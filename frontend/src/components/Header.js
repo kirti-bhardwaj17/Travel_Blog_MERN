@@ -14,7 +14,10 @@ const Header = () => {
     return (
     <AppBar 
     position='sticky'
-    sx={{background: "radial-gradient(circle, rgba(94,194,183,1) 0%, rgba(44,166,164,1) 100%)"}}>
+     sx={{background: "radial-gradient(circle, rgba(94,194,183,1) 0%, rgba(44,166,164,1) 100%)"}}
+        // sx={{background: "#19647E"}}
+    >
+    
         <Toolbar>
         <img src={"SnapWanderer-logo.png"} alt="SnapWanderer Logo" style={{ marginRight: '10px', height: '40px', width: 'auto' }} />
 
@@ -29,9 +32,11 @@ const Header = () => {
                 </Tabs>
             </Box>}
             <Box display="flex" marginLeft='auto'>
-{    !isLoggedIn   &&    <>     <Button LinkComponent={Link} to="/auth" variant='contained' sx={{margin:1,borderRadius:10,bgcolor: "#62B6CB"}} >Login</Button>
-                <Button LinkComponent={Link} to="/signup" variant='contained' sx={{margin:1,borderRadius:10,bgcolor: "#62B6CB"}}>Signup</Button></>
-}{              isLoggedIn &&  <Button onClick={()=>dispatch(authActions.logout())}
+            <Button LinkComponent={Link} to="/" variant='contained' sx={{margin:1,borderRadius:10,bgcolor: "#62B6CB"}} >Home</Button>
+{    !isLoggedIn   &&    <>     <Button LinkComponent={Link} to="/auth" variant='contained' sx={{margin:1,borderRadius:10,bgcolor: "#62B6CB"}} >Login / signup</Button>
+</>
+}
+{              isLoggedIn &&  <Button onClick={()=>dispatch(authActions.logout())}
                     LinkComponent={Link} to="/auth" variant='contained' sx={{margin:1,borderRadius:10,bgcolor: "#62B6CB"}}>Logout</Button>
 }            </Box> 
         </Toolbar>
