@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { authActions } from '../store';
 // import { useStyles } from './utils';
+import logo from "./SnapWanderer-logo.png"
 
 const Header = () => {
     const classes = makeStyles
@@ -19,7 +20,7 @@ const Header = () => {
     >
     
         <Toolbar>
-        <img src={"SnapWanderer-logo.png"} alt="SnapWanderer Logo" style={{ marginRight: '10px', height: '40px', width: 'auto' }} />
+        <img src={logo} alt="SnapWanderer Logo" style={{ marginRight: '10px', height: '40px', width: 'auto' }} />
 
             {/* <Typography className={classes.font} variant="h4">
                 SnapWanderer
